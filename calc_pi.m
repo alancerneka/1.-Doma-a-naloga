@@ -14,9 +14,9 @@ fprintf('Napaka: %f\n', napaka);
 % Anonimna funkcija za izračun točk na loku krožnice
 krozni_lok = @(theta) [cos(theta); sin(theta)];
 
-% Vizualizacija
-theta = (0: 0.01 : 2*pi); % Koti za izris krožnice
-krog = krozni_lok(theta); % Točke na loku krožnice
+
+theta = (0: 0.01 : 2*pi); 
+krog = krozni_lok(theta); 
 
 figure;
 hold on;
