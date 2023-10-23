@@ -9,9 +9,9 @@ function [koordinate_krog, koordinate_kvadrat] = mcc_pi(tocke)
     % For zanka za generacijo naključnih točk 
     % na območju -1 < x < 1 in -1 < y < 1 
     for i = 1:tocke
-        x = rand() * 2 - 1; % Naključna vrednost x med -1 in 1
-        y = rand() * 2 - 1; % Naključna vrednost y med -1 in 1
-        if x^2 + y^2 <= 1 % Zajamemo tudi točke na krožnem loku
+        x = rand() * 2 - 1; 
+        y = rand() * 2 - 1; 
+        if x^2 + y^2 <= 1
             stevilo_krog = stevilo_krog + 1;
             tocke_krog(stevilo_krog, :) = [x, y];
         else
