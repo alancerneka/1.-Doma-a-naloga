@@ -1,4 +1,4 @@
-% Definiramo število naključnih točk
+% Število naključnih točk
 tocke = 10000;
 
 % Klic funkcije mcc_pi
@@ -23,7 +23,7 @@ hold on;
 % Točke v krogu
 plot(koordinaate_krog(:, 1), koordinaate_krog(:, 2), 'b.', "DisplayName","točke znotraj krožnice"); 
 
-% Točke znotraj kvadrata in ne kroga
+% Točke znotraj kvadrata in zunaj kroga
 plot(koordinate_kvadrat(:, 1), koordinate_kvadrat(:, 2), 'g.', "DisplayName","točke znotraj kvadrata in zunaj krožnice"); 
 
 % Kroznica
