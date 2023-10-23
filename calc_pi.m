@@ -21,14 +21,18 @@ krog = krozni_lok(theta); % Točke na loku krožnice
 figure;
 hold on;
 % Točke v krogu
-plot(koordinaate_krog(:,1), koordinaate_krog(:,2), 'b.'); 
+plot(koordinaate_krog(:, 1), koordinaate_krog(:, 2), 'b.', "DisplayName","točke znotraj krožnice"); 
 
 % Točke znotraj kvadrata in ne kroga
-plot(koordinate_kvadrat(:,1), koordinate_kvadrat(:,2), 'g.'); 
+plot(koordinate_kvadrat(:, 1), koordinate_kvadrat(:, 2), 'g.', "DisplayName","točke znotraj kvadrata in zunaj krožnice"); 
 
 % Kroznica
-plot(krog(1,:), krog(2,:), 'r-', 'LineWidth', 1); 
+plot(krog(1,:), krog(2,:), 'r-', 'LineWidth', 1, "DisplayName","krožnica"); 
 axis equal;
+legend
+title("Aproksimacija π po metodi Monte Carlo")
+xlabel("x")
+ylabel("y")
 hold off;
 
 % Definicija lokalne funkcije area_pi
