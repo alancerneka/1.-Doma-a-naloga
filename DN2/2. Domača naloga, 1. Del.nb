@@ -1,0 +1,161 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5927,        153]
+NotebookOptionsPosition[      5230,        133]
+NotebookOutlinePosition[      5660,        150]
+CellTagsIndexPosition[      5617,        147]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Metoda monte carlo za ra\[CHacek]unanje \[Pi]", "Subtitle",
+ CellChangeTimes->{{3.908518195722783*^9, 
+  3.9085182133515606`*^9}},ExpressionUUID->"1b691d54-fd29-4a05-b201-\
+678c0e06fbe4"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "Funkcija", " ", "ki", " ", "ima", " ", "lokalne", " ", "premenljivke"}], 
+    ",", " ", 
+    RowBox[{
+    "in", " ", "kjer", " ", "je", " ", "n", " ", "\[SHacek]tevilo", " ", 
+     "to\[CHacek]k", " ", "naklju\[CHacek]no", " ", "generiranih", " ", 
+     "to\[CHacek]k"}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Funkcija", "[", "n_", "]"}], " ", ":=", " ", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "pribli\[ZHacek]ek", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"(*", 
+      RowBox[{
+      "Generacija", " ", "in", " ", "preverjanje", " ", "polo\[ZHacek]aja", 
+       " ", "to\[CHacek]k"}], "*)"}], "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"to\[CHacek]ke", "=", 
+       RowBox[{"RandomPoint", "[", 
+        RowBox[{
+         RowBox[{"Rectangle", "[", "]"}], ",", "n"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Preverjanje", "=", 
+       RowBox[{"RegionMember", "[", 
+        RowBox[{"Disk", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0.5", ",", "0.5"}], "}"}], ",", "0.5"}], "]"}], "]"}]}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{"Ra\[CHacek]unski", " ", "del"}], "*)"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"pribli\[ZHacek]ek", "=", 
+       RowBox[{"N", "[", 
+        RowBox[{
+         RowBox[{"Count", "[", 
+          RowBox[{
+           RowBox[{"Preverjanje", "[", "to\[CHacek]ke", "]"}], ",", "True"}], 
+          "]"}], "*", 
+         FractionBox["4", 
+          RowBox[{"Length", "[", "to\[CHacek]ke", "]"}]]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{"Prikazovalni", " ", "del"}], "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"Print", "[", 
+       RowBox[{
+       "\"\<Pribli\[ZHacek]ek za \[Pi] pri \[SHacek]tevilu to\[CHacek]k\>\"", 
+        ",", " ", "\"\<: \>\"", ",", "n", ",", " ", "\"\< \>\"", ",", 
+        "\"\<je\>\"", ",", "\"\< \>\"", ",", "pribli\[ZHacek]ek"}], "]"}], 
+      ";", "  ", "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{"Grafi\[CHacek]ni", " ", "prikaz"}], "*)"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"Graphics", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Point", "[", "to\[CHacek]ke", "]"}], ",", "Green", ",", 
+         RowBox[{"Point", "[", 
+          RowBox[{"Pick", "[", 
+           RowBox[{"to\[CHacek]ke", ",", 
+            RowBox[{"Preverjanje", "[", "to\[CHacek]ke", "]"}]}], "]"}], 
+          "]"}]}], "}"}], "]"}]}]}], "\[IndentingNewLine]", 
+    "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.908535783620475*^9, 3.908535938659506*^9}, {
+  3.908535968904925*^9, 3.908535991409567*^9}, {3.9085360960980434`*^9, 
+  3.908536122461961*^9}, {3.90853617431892*^9, 3.9085361766942835`*^9}, {
+  3.9085364210646553`*^9, 3.9085364326227913`*^9}, {3.9085365929843245`*^9, 
+  3.9085366650906687`*^9}, {3.9085368525147924`*^9, 3.9085368640395555`*^9}, {
+  3.908536894438177*^9, 3.908537125281509*^9}, {3.908537262938257*^9, 
+  3.908537545608425*^9}, {3.9085376087482443`*^9, 3.9085376867716455`*^9}},
+ CellLabel->"In[13]:=",ExpressionUUID->"cb554eb8-5b14-461a-86aa-98ea16ab95ff"],
+
+Cell[BoxData[
+ RowBox[{"Funkcija", "[", "10000", "]"}]], "Input",
+ CellChangeTimes->{{3.908536867338376*^9, 3.9085368837389956`*^9}, {
+  3.908541284594426*^9, 3.908541337121211*^9}},
+ CellLabel->"In[14]:=",ExpressionUUID->"7036f634-0779-4e5d-a7b1-c55c4332caa6"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "Dol\[CHacek]itev", " ", "natan\[CHacek]nosti", " ", "metode", " ", 
+     "Monte", " ", "Carlo", " ", "s", " ", "klicanjem", " ", "funkcije", " ", 
+     RowBox[{"Odstopanje", "[", "n", "]"}]}], ",", " ", 
+    RowBox[{"n", " ", "=", " ", 
+     RowBox[{"\[SHacek]tevilo", " ", "to\[CHacek]k"}]}]}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+   "Get", "[", 
+    "\"\<C:\\\\Users\\\\alanc\\\\OneDrive\\\\Desktop\\\\2.Domaca_naloga\\\\\
+odstopanje.m\>\"", "]"}], "\[IndentingNewLine]", 
+   RowBox[{"Odstopanje", "[", "10", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.908539890879622*^9, 3.9085399206655626`*^9}, {
+  3.9085399659161625`*^9, 3.908540006866275*^9}, {3.908540094249816*^9, 
+  3.908540094618635*^9}, {3.9085403419010468`*^9, 3.908540465829816*^9}, {
+  3.908812568640397*^9, 3.9088125777007527`*^9}},
+ CellLabel->"In[15]:=",ExpressionUUID->"484b644c-3be3-40c1-90e0-750fe2f51cf6"]
+}, Open  ]]
+},
+WindowSize->{1141.2, 568.8},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification:>0.9 Inherited,
+FrontEndVersion->"13.3 for Microsoft Windows (64-bit) (June 3, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"4bac2478-6a1c-42d3-88b1-7acccb9a61be"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 193, 3, 47, "Subtitle",ExpressionUUID->"1b691d54-fd29-4a05-b201-678c0e06fbe4"],
+Cell[776, 27, 3201, 74, 248, "Input",ExpressionUUID->"cb554eb8-5b14-461a-86aa-98ea16ab95ff"],
+Cell[3980, 103, 261, 4, 25, "Input",ExpressionUUID->"7036f634-0779-4e5d-a7b1-c55c4332caa6"],
+Cell[4244, 109, 970, 21, 60, "Input",ExpressionUUID->"484b644c-3be3-40c1-90e0-750fe2f51cf6"]
+}, Open  ]]
+}
+]
+*)
+

@@ -1,0 +1,205 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6944,        197]
+NotebookOptionsPosition[      6182,        177]
+NotebookOutlinePosition[      6582,        193]
+CellTagsIndexPosition[      6539,        190]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["RAZVOJ FUNKCIJE V VRSTO", "Subtitle",
+ CellChangeTimes->{
+  3.9088938627579374`*^9},ExpressionUUID->"19d05b50-fec7-41d3-9480-\
+92c6471924dd"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Funkcija", " ", "ki", " ", "jo", " ", "aproksimiramo"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"f", "[", "t_", "]"}], "=", " ", 
+     RowBox[{
+      RowBox[{"Sin", "[", "t", "]"}], "*", 
+      SuperscriptBox["t", "2"], "*", 
+      RowBox[{"Exp", "[", 
+       RowBox[{"-", "t"}], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "To\[CHacek]ka", " ", "okoli", " ", "katere", " ", "zapi\[SHacek]emo", 
+     " ", "Taaylorjevo", " ", "vrsto"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"t0", " ", "=", " ", "2"}], ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.908894089136511*^9, 3.9088941207581406`*^9}, {
+  3.9088943934618416`*^9, 
+  3.908894431855571*^9}},ExpressionUUID->"12166b6f-c48a-498c-871b-\
+5284105ca7c1"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Vrsta", "[", "red_", "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "TVrsta", "}"}], ",", 
+     RowBox[{
+      RowBox[{"TVrsta", "=", 
+       RowBox[{"Normal", "[", 
+        RowBox[{"Series", "[", 
+         RowBox[{
+          RowBox[{"f", "[", "t", "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"t", ",", "t0", ",", "red"}], "}"}]}], "]"}], "]"}]}], ";", 
+      RowBox[{"Plot", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"f", "[", "t", "]"}], ",", "TVrsta"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"t", " ", ",", "0", " ", ",", " ", "4"}], "}"}], ",", 
+        RowBox[{"AxesLabel", "->", 
+         RowBox[{"{", 
+          RowBox[{"\"\<t\>\"", ",", "\"\<Funkcija\>\""}], "}"}]}], ",", 
+        RowBox[{"PlotRange", "->", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"0", ",", "4"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "1.5"}], ",", "1.5"}], "}"}]}], "}"}]}], ",", " ", 
+        RowBox[{"PlotLegends", "->", 
+         RowBox[{"{", 
+          RowBox[{"\"\<Originalna funkcija\>\"", ",", 
+           RowBox[{"StringJoin", "[", 
+            RowBox[{"\"\<Taylorjeva vrsta, red = \>\"", ",", 
+             RowBox[{"ToString", "[", "red", "]"}]}], "]"}]}], "}"}]}]}], 
+       "]"}]}]}], "]"}]}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.9088941634620876`*^9, 3.908894174648425*^9}, {
+  3.908894226008788*^9, 3.90889425643289*^9}, {3.9088943541493397`*^9, 
+  3.9088943811150866`*^9}, {3.9088944431229973`*^9, 
+  3.908894443476396*^9}},ExpressionUUID->"14c1f639-6348-4657-b2db-\
+4a9241f7fe2b"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Uporaba", " ", "funkcije", " ", 
+    RowBox[{"Manipulate", "[", "]"}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"Pomembno", " ", "definirati"}], ",", " ", 
+    RowBox[{
+    "da", " ", "red", " ", "Taylorjeve", " ", "vrste", " ", 
+     "nara\[SHacek]\[CHacek]a", " ", "s", " ", "korakom", " ", "1"}]}], 
+   "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"ManipulateVrsta", "[", "]"}], ":=", 
+    RowBox[{"Manipulate", "[", 
+     RowBox[{
+      RowBox[{"Module", "[", 
+       RowBox[{
+        RowBox[{"{", "TVrsta", "}"}], ",", 
+        RowBox[{
+         RowBox[{"TVrsta", "=", 
+          RowBox[{"Normal", "[", 
+           RowBox[{"Series", "[", 
+            RowBox[{
+             RowBox[{"f", "[", "t", "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"t", ",", "t0", ",", "red"}], "}"}]}], "]"}], "]"}]}], 
+         ";", "\[IndentingNewLine]", 
+         RowBox[{"Plot", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"f", "[", "t", "]"}], ",", "TVrsta"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"t", ",", "0", ",", "4"}], "}"}], ",", 
+           RowBox[{"AxesLabel", "->", 
+            RowBox[{"{", 
+             RowBox[{"\"\<t\>\"", ",", "\"\<funkcija\>\""}], "}"}]}], ",", 
+           RowBox[{"PlotRange", "->", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"0", ",", "4"}], "}"}], ",", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"-", "1.5"}], ",", "1.5"}], "}"}]}], "}"}]}], ",", 
+           RowBox[{"PlotLegends", "->", 
+            RowBox[{"{", 
+             RowBox[{"\"\<Originalna funkcija\>\"", ",", 
+              RowBox[{"StringJoin", "[", 
+               RowBox[{"\"\<Taylorjeva vrsta, red = \>\"", ",", 
+                RowBox[{"ToString", "[", "red", "]"}]}], "]"}]}], "}"}]}]}], 
+          "]"}]}]}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"red", ",", "1", ",", "\"\<Red Taylorjeve vrste\>\""}], 
+         "}"}], ",", "1", ",", "10", ",", "1"}], "}"}]}], "]"}]}], 
+   "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.9088941634620876`*^9, 3.908894174648425*^9}, {
+  3.908894226008788*^9, 
+  3.9088943228852153`*^9}},ExpressionUUID->"10523a53-7fde-4dd3-a885-\
+e230728e9ef8"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Primer", " ", "uporabe", " ", "funkcije"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"ManipulateVrsta", "[", "]"}], "\n"}]}]], "Input",
+ CellChangeTimes->{{3.9088941634620876`*^9, 3.908894174648425*^9}, {
+  3.908894226008788*^9, 
+  3.9088943228852153`*^9}},ExpressionUUID->"c2d0136c-ecc4-4d66-a97f-\
+6e94d5a7bd99"]
+}, Open  ]]
+},
+WindowSize->{1141.2, 573.6},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"13.3 for Microsoft Windows (64-bit) (June 3, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"53016d2e-d7f3-41b6-babe-0b4adb1ac40f"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 147, 3, 53, "Subtitle",ExpressionUUID->"19d05b50-fec7-41d3-9480-92c6471924dd"],
+Cell[730, 27, 851, 23, 86, "Input",ExpressionUUID->"12166b6f-c48a-498c-871b-5284105ca7c1"],
+Cell[1584, 52, 1774, 45, 124, "Input",ExpressionUUID->"14c1f639-6348-4657-b2db-4a9241f7fe2b"],
+Cell[3361, 99, 2419, 63, 124, "Input",ExpressionUUID->"10523a53-7fde-4dd3-a885-e230728e9ef8"],
+Cell[5783, 164, 383, 10, 67, "Input",ExpressionUUID->"c2d0136c-ecc4-4d66-a97f-6e94d5a7bd99"]
+}, Open  ]]
+}
+]
+*)
+
